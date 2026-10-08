@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sukoon – Comfort from the Quran | سکون</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EAF1EE;--card:#fff;--ink:#15302E;--mute:#5B7471;--acc:#2E7D74;--accink:#fff;--gold:#9A6F17;--line:#CFE0DB;--warn:#FBEBD8;--warnink:#5A3510;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1F1E;--card:#162B29;--ink:#E6F2EF;--mute:#94B3AE;--acc:#5CC2B5;--accink:#0F1F1E;--gold:#E0B65A;--line:#284643;--warn:#3A2A18;--warnink:#F6DDBE}}
+:root[data-theme="dark"]{--bg:#0F1F1E;--card:#162B29;--ink:#E6F2EF;--mute:#94B3AE;--acc:#5CC2B5;--accink:#0F1F1E;--gold:#E0B65A;--line:#284643;--warn:#3A2A18;--warnink:#F6DDBE}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+#app{max-width:600px;margin:0 auto;padding:18px 18px 40px}
+.ur{font-family:"Noto Nastaliq Urdu","Noto Naskh Arabic","Segoe UI",serif;line-height:2.3}
+.en h1,.en h2{font-family:Lora,Georgia,serif}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.top h1{font-size:30px;line-height:1.3}
+.seg{display:flex;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;flex:none}
+.seg button{border:0;background:var(--card);color:var(--mute);padding:8px 14px;font:600 15px system-ui;cursor:pointer}
+.seg button.on{background:var(--acc);color:var(--accink)}
+.sub{color:var(--mute);margin:6px 0 18px}
+textarea{width:100%;height:130px;padding:14px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit;resize:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;padding:6px 14px;font:inherit;font-size:15px;cursor:pointer;line-height:1.6}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.go{width:100%;border:0;border-radius:14px;padding:14px;background:var(--acc);color:var(--accink);font:700 17px system-ui;cursor:pointer}
+.priv{font-size:14px;color:var(--mute);margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:16px}
+.card h2{font-size:22px;margin-bottom:6px}
+.verse{border-inline-start:4px solid var(--gold);padding:2px 14px;margin:14px 0}
+.verse b{display:block;color:var(--gold);font-size:15px}
+.verse a{color:var(--acc);font-size:14px}
+.lbl{font-weight:700;margin-top:14px}
+.tr{font-style:italic;color:var(--mute)}
+.crisis{background:var(--warn);color:var(--warnink);border-radius:16px;padding:16px;margin-top:16px;font-weight:600}
+.cnt{display:flex;align-items:center;gap:14px;margin-top:10px}
+.big{width:96px;height:96px;border-radius:50%;border:0;background:var(--acc);color:var(--accink);font:700 30px system-ui;cursor:pointer}
+.small{border:0;background:none;color:var(--mute);text-decoration:underline;cursor:pointer;font:inherit;font-size:15px}
+.foot{font-size:14px;color:var(--mute);margin-top:22px}
+.card.t{--cbg:hsl(var(--h) 80% 94%);--cbd:hsl(var(--h) 55% 68%);--ctx:hsl(var(--h) 70% 28%);--cin:hsl(var(--h) 85% 98%);--cdu:hsl(var(--h) 75% 89%);background:var(--cbg);border:1.5px solid var(--cbd)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .card.t{--cbg:hsl(var(--h) 35% 17%);--cbd:hsl(var(--h) 40% 35%);--ctx:hsl(var(--h) 75% 74%);--cin:hsl(var(--h) 30% 12%);--cdu:hsl(var(--h) 35% 25%)}}
+:root[data-theme="dark"] .card.t{--cbg:hsl(var(--h) 35% 17%);--cbd:hsl(var(--h) 40% 35%);--ctx:hsl(var(--h) 75% 74%);--cin:hsl(var(--h) 30% 12%);--cdu:hsl(var(--h) 35% 25%)}
+.card.t h2,.card.t .lbl,.card.t .verse b,.card.t .verse a,.card.t .tr{color:var(--ctx)}
+.card.t .verse{background:var(--cin);border-radius:12px;padding:8px 14px;border-inline-start-color:var(--ctx)}
+.dua{background:var(--cdu);border-radius:12px;padding:8px 14px;margin-top:6px}
+.chip{border-color:hsl(var(--h,170) 55% 60%)}
+.chip.on{background:hsl(var(--h,170) 65% 34%);color:#fff;border-color:hsl(var(--h,170) 65% 34%)}
+.pray{background:linear-gradient(135deg,#14504A,#1F6F68 55%,#6B4A0E);color:#fff;border-radius:18px;padding:16px;margin:0 0 18px}
+.pray h2{font-size:20px;color:#fff;margin-bottom:2px}
+.pray .nx{font-size:15px;margin:2px 0 10px}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;line-height:1.9}
+.pg div{background:rgba(255,255,255,.18);border-radius:12px;padding:6px 4px;text-align:center}
+.pg div.on{background:#fff;color:#15302E}
+.pg b{display:block;font-size:14px;font-weight:600}
+.pg span{font-size:16px;font-weight:700}
+.pray .note{font-size:13px;margin-top:10px}
+.pray .small{color:#fff;margin-top:4px}
+.par{text-align:center;margin-top:22px;padding:16px;border-radius:18px;border:1.5px solid var(--gold);background:var(--card)}
+.par b{display:block;color:var(--gold);font-size:19px;margin:4px 0}
+body{background:linear-gradient(160deg,var(--bg) 0%,color-mix(in srgb,var(--acc) 24%,var(--bg)) 55%,color-mix(in srgb,var(--gold) 20%,var(--bg)) 100%);background-attachment:fixed;min-height:100vh}
+#app{position:relative;z-index:1}
+.bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.35;animation:fl 14s ease-in-out infinite alternate}
+.o1{width:320px;height:320px;background:var(--acc);top:-90px;left:-90px}
+.o2{width:260px;height:260px;background:var(--gold);top:38%;right:-100px;opacity:.22;animation-delay:-6s}
+@keyframes fl{to{transform:translate(30px,40px) scale(1.12)}}
+.w{position:absolute;left:0;bottom:0;width:200%;fill:var(--acc);animation:sw 20s linear infinite}
+.w1{height:190px;opacity:.16}
+.w2{height:150px;opacity:.2;animation-duration:30s;animation-direction:reverse}
+.w3{height:110px;opacity:.26;animation-duration:42s}
+@keyframes sw{to{transform:translateX(-50%)}}
+@keyframes up{from{opacity:0;transform:translateY(14px)}}
+.card.t,.crisis{animation:up .5s ease both}
+.top h1{background:linear-gradient(90deg,var(--acc),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:34px}
+.seg{border-radius:14px;backdrop-filter:blur(8px)}
+.card,.pray{box-shadow:0 10px 30px rgba(20,60,55,.14)}
+.card{backdrop-filter:blur(12px);border-radius:22px;background:color-mix(in srgb,var(--card) 80%,transparent)}
+.card.t{background:color-mix(in srgb,var(--cbg) 86%,transparent)}
+textarea{background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 6px 20px rgba(20,60,55,.08)}
+textarea:focus{border-color:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 25%,transparent)}
+.chip{box-shadow:0 2px 8px rgba(20,60,55,.08);transition:transform .15s}
+.chip:hover{transform:translateY(-2px)}
+.go{background:linear-gradient(135deg,var(--acc),color-mix(in srgb,var(--acc) 70%,#1b4f8a));border-radius:16px;box-shadow:0 8px 22px color-mix(in srgb,var(--acc) 45%,transparent);transition:transform .15s}
+.go:hover{transform:translateY(-2px)}
+.big{background:linear-gradient(135deg,var(--acc),color-mix(in srgb,var(--acc) 65%,#1b4f8a));box-shadow:0 0 0 6px color-mix(in srgb,var(--acc) 22%,transparent),0 10px 24px color-mix(in srgb,var(--acc) 40%,transparent)}
+.big:active{transform:scale(.94)}
+.foot{background:color-mix(in srgb,var(--card) 70%,transparent);border-radius:14px;padding:12px}
+@media (prefers-reduced-motion:reduce){.w,.orb,.card.t,.crisis{animation:none}}
+</style>
+</head>
+<body>
+<div class="bgfx" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div><svg class="w w1" viewBox="0 0 2880 200" preserveAspectRatio="none"><path d="M0,100 C180,40 540,160 720,100 C900,40 1260,160 1440,100 C1620,40 1980,160 2160,100 C2340,40 2700,160 2880,100 V200 H0 Z"/></svg><svg class="w w2" viewBox="0 0 2880 200" preserveAspectRatio="none"><path d="M0,100 C180,40 540,160 720,100 C900,40 1260,160 1440,100 C1620,40 1980,160 2160,100 C2340,40 2700,160 2880,100 V200 H0 Z"/></svg><svg class="w w3" viewBox="0 0 2880 200" preserveAspectRatio="none"><path d="M0,100 C180,40 540,160 720,100 C900,40 1260,160 1440,100 C1620,40 1980,160 2160,100 C2340,40 2700,160 2880,100 V200 H0 Z"/></svg></div>
+<div id="app"></div>
+<script>
+const L={
+en:{pt:"Prayer times",nx:"Next prayer",loc:"Use my location",lc:"Multan (default)",myl:"Your location",nl:"Could not get your location. Showing Multan times.",pn:["Fajr","Sunrise","Dhuhr","Asr","Maghrib","Isha"],pnote:"Approximate times (Karachi method, Hanafi Asr). Please confirm with your local mosque.",par1:"Isal-e-Sawab for my beloved late parents",par2:"Muhammad Khalid and Zahida Khalid",par3:"May Allah forgive them and grant them Jannah. Ameen 🤲",title:"Sukoon",sub:"Tell us what is on your heart. You will get comfort from the Quran and Islamic teachings, right away.",ph:"Write what you are going through…",topics:"Or pick a feeling:",btn:"Get comfort",dua:"Dua or dhikr",tip:"Something small to try",read:"Read the full verse on Quran.com",priv:"What you write stays on your device. Nothing is sent or saved.",none:"Write something or pick a feeling first.",dh:"Dhikr counter",dhs:"Tap to count. Say SubhanAllah, Alhamdulillah or Allahu Akbar.",reset:"Reset",foot:"This is comfort based on Islamic teachings, not medical advice or therapy. Verses are shown as meanings only; please read the full text and translation on Quran.com. If you feel unsafe or your low mood lasts, please see a doctor or counselor.",crisis:"You matter, and your life matters. If you are thinking about harming yourself, please tell someone you trust right now, call your local emergency number, or go to the nearest hospital. Please do not stay alone with these thoughts."},
+ur:{pt:"نماز کے اوقات",nx:"اگلی نماز",loc:"میری لوکیشن استعمال کریں",lc:"ملتان (ڈیفالٹ)",myl:"آپ کی لوکیشن",nl:"آپ کی لوکیشن نہیں مل سکی۔ ملتان کے اوقات دکھائے جا رہے ہیں۔",pn:["فجر","طلوعِ آفتاب","ظہر","عصر","مغرب","عشاء"],pnote:"یہ تقریباً اوقات ہیں (کراچی طریقہ، حنفی عصر)۔ براہِ کرم اپنی مقامی مسجد سے تصدیق کر لیں۔",par1:"میرے پیارے مرحوم والدین کے لیے ایصالِ ثواب",par2:"محمد خالد اور زاہدہ خالد",par3:"اللہ تعالیٰ انہیں معاف فرمائے اور جنت عطا فرمائے۔ آمین 🤲",title:"سکون",sub:"جو کچھ آپ کے دل میں ہے لکھیں۔ آپ کو فوراً قرآن اور اسلامی تعلیمات سے تسلی ملے گی۔",ph:"آپ جس کیفیت سے گزر رہے ہیں وہ لکھیں…",topics:"یا اپنی کیفیت چنیں:",btn:"تسلی حاصل کریں",dua:"دعا یا ذکر",tip:"آزمانے کے لیے ایک چھوٹی بات",read:"مکمل آیت Quran.com پر پڑھیں",priv:"آپ جو لکھتے ہیں وہ آپ کے ڈیوائس پر ہی رہتا ہے۔ کچھ بھی بھیجا یا محفوظ نہیں کیا جاتا۔",none:"پہلے کچھ لکھیں یا کیفیت چنیں۔",dh:"ذکر کا کاؤنٹر",dhs:"گننے کے لیے دبائیں۔ سبحان اللہ، الحمدللہ یا اللہ اکبر پڑھیں۔",reset:"دوبارہ شروع",foot:"یہ اسلامی تعلیمات پر مبنی تسلی ہے، طبی مشورہ یا علاج نہیں۔ آیات صرف مفہوم کے طور پر دی گئی ہیں؛ مکمل متن اور ترجمہ Quran.com پر پڑھیں۔ اگر آپ خود کو غیر محفوظ سمجھیں یا اداسی طویل ہو تو ڈاکٹر یا کاؤنسلر سے ملیں۔",crisis:"آپ اہم ہیں اور آپ کی زندگی قیمتی ہے۔ اگر آپ خود کو نقصان پہنچانے کا سوچ رہے ہیں تو براہِ کرم ابھی کسی بھروسے کے شخص کو بتائیں، اپنے علاقے کا ایمرجنسی نمبر ملائیں یا قریبی ہسپتال جائیں۔ براہِ کرم ان خیالات کے ساتھ اکیلے نہ رہیں۔"}};
+const T=[
+{id:"stress",h:["Stress and tension","ذہنی دباؤ اور ٹینشن"],k:["stress","tension","pressure","overwhelm","burnout","too much","exam","ٹینشن","دباؤ","تھک"],
+m:["It sounds like you are carrying a lot right now. That is heavy, and it is okay to feel it.","لگتا ہے آپ اس وقت بہت بوجھ اٹھائے ہوئے ہیں۔ یہ مشکل ہے، اور ایسا محسوس کرنا ٹھیک ہے۔"],
+v:[["94","5-6","Indeed, with hardship comes ease. Indeed, with hardship comes ease.","بے شک مشکل کے ساتھ آسانی ہے۔ بے شک مشکل کے ساتھ آسانی ہے۔","Surah Ash-Sharh 94:5-6","سورۃ الشرح 94:5-6"],["2","286","Allah does not burden a soul beyond what it can bear.","اللہ کسی جان پر اس کی طاقت سے زیادہ بوجھ نہیں ڈالتا۔","Surah Al-Baqarah 2:286","سورۃ البقرہ 2:286"]],
+d:["Hasbunallahu wa ni'mal wakeel","Allah is enough for us, and He is the best protector.","ہمیں اللہ کافی ہے اور وہ بہترین کارساز ہے۔"],
+t:["Make wudu, take ten slow breaths, and pick just one task to do next.","وضو کریں، دس بار آہستہ سانس لیں، اور اگلا صرف ایک کام چن لیں۔"]},
+{id:"anxiety",h:["Anxiety and worry","پریشانی اور بے چینی"],k:["anxi","worry","worried","panic","fear","afraid","scared","nervous","future","overthink","پریشان","فکر","ڈر","گھبرا","بے چین"],
+m:["Worry about the future can feel endless. You do not have to solve it all tonight.","مستقبل کی فکر کبھی ختم ہوتی نہیں لگتی۔ آپ کو سب کچھ آج رات حل نہیں کرنا۔"],
+v:[["13","28","Truly, in the remembrance of Allah hearts find rest.","سنو! اللہ کے ذکر سے ہی دلوں کو اطمینان ملتا ہے۔","Surah Ar-Ra'd 13:28","سورۃ الرعد 13:28"],["65","2-3","Whoever is mindful of Allah, He makes a way out for them and provides from where they never expected. Whoever relies on Allah, He is enough for them.","جو اللہ سے ڈرتا ہے وہ اس کے لیے راستہ نکال دیتا ہے اور وہاں سے رزق دیتا ہے جہاں سے اسے گمان بھی نہ ہو۔ اور جو اللہ پر بھروسا کرے تو وہ اسے کافی ہے۔","Surah At-Talaq 65:2-3","سورۃ الطلاق 65:2-3"]],
+d:["La hawla wa la quwwata illa billah","There is no power and no strength except with Allah.","اللہ کے بغیر نہ کوئی طاقت ہے نہ کوئی قوت۔"],
+t:["Write down what is in your control and what is not. Hand the second list over to Allah.","لکھیں کہ کیا آپ کے اختیار میں ہے اور کیا نہیں۔ جو آپ کے اختیار میں نہیں اسے اللہ کے سپرد کر دیں۔"]},
+{id:"sad",h:["Sadness and depression","اداسی اور ڈپریشن"],k:["sad","depress","hopeless","empty","cry","numb","tired of life","no point","worthless","اداس","ڈپریشن","مایوس","رونا","روتا","روتی","دکھی","بے کار"],
+m:["I am sorry you feel this low. You are not weak, and you are not alone.","مجھے افسوس ہے کہ آپ اتنے دکھی ہیں۔ آپ کمزور نہیں ہیں، اور اکیلے بھی نہیں۔"],
+v:[["93","3","Your Lord has not abandoned you, nor is He displeased with you.","آپ کے رب نے آپ کو نہیں چھوڑا اور نہ وہ ناراض ہوا۔","Surah Ad-Duha 93:3","سورۃ الضحیٰ 93:3"],["12","86","Prophet Yaqub (peace be upon him) said: I only complain of my grief and sorrow to Allah.","یعقوب علیہ السلام نے کہا: میں اپنے غم اور دکھ کی فریاد صرف اللہ سے کرتا ہوں۔","Surah Yusuf 12:86","سورۃ یوسف 12:86"]],
+d:["La ilaha illa Anta, subhanaka, inni kuntu minaz-zalimin","There is no god but You, glory be to You; I was among the wrongdoers. (The dua of Prophet Yunus.)","تیرے سوا کوئی معبود نہیں، تو پاک ہے، بے شک میں ہی ظالموں میں سے تھا۔ (حضرت یونس علیہ السلام کی دعا)"],
+t:["Depression is an illness, not a lack of faith. Take one small step today, like a short walk in daylight, and please talk to a doctor or counselor and to someone you trust.","ڈپریشن ایک بیماری ہے، ایمان کی کمی نہیں۔ آج ایک چھوٹا قدم اٹھائیں، جیسے دن کی روشنی میں تھوڑی سی سیر، اور کسی ڈاکٹر، کاؤنسلر اور بھروسے کے شخص سے ضرور بات کریں۔"]},
+{id:"lonely",h:["Loneliness","تنہائی"],k:["lonely","alone","no friend","nobody","isolated","تنہا","اکیلا","اکیلی"],
+m:["Feeling alone hurts. Reaching out, even here, is a brave first step.","تنہائی کا احساس تکلیف دیتا ہے۔ بات کرنا، یہاں بھی، ایک بہادری کا پہلا قدم ہے۔"],
+v:[["2","186","When My servants ask about Me, I am near. I answer the call of the one who calls.","جب میرے بندے آپ سے میرے بارے میں پوچھیں تو میں قریب ہوں۔ میں پکارنے والے کی پکار کا جواب دیتا ہوں۔","Surah Al-Baqarah 2:186","سورۃ البقرہ 2:186"],["50","16","We are closer to a person than their jugular vein.","ہم انسان کی شہ رگ سے بھی زیادہ اس کے قریب ہیں۔","Surah Qaf 50:16","سورۃ ق 50:16"]],
+d:["Ya Hayyu, Ya Qayyum, bi rahmatika astagheeth","O Ever-Living, O Sustainer, in Your mercy I seek relief.","اے زندہ، اے قائم رکھنے والے، تیری رحمت کے واسطے سے فریاد کرتا ہوں۔"],
+t:["Send a message to one person today, or sit with family or neighbours for a few minutes.","آج کسی ایک شخص کو پیغام بھیجیں، یا چند منٹ گھر والوں یا پڑوسیوں کے ساتھ بیٹھیں۔"]},
+{id:"grief",h:["Grief and loss","غم اور جدائی"],k:["died","death","passed away","lost my","loss","miss him","miss her","grief","funeral","وفات","انتقال","فوت","جدائی","غم"],
+m:["I am so sorry for your loss. There is no deadline for grief.","آپ کے نقصان پر مجھے بہت افسوس ہے۔ غم کی کوئی مقررہ مدت نہیں ہوتی۔"],
+v:[["2","155-156","We will surely test you with fear, hunger and loss. Give good news to the patient, who say when hardship strikes: we belong to Allah and to Him we return.","ہم ضرور تمہیں خوف، بھوک اور نقصان سے آزمائیں گے۔ صبر کرنے والوں کو خوشخبری دو، جو مصیبت پہنچنے پر کہتے ہیں: ہم اللہ ہی کے ہیں اور اسی کی طرف لوٹنے والے ہیں۔","Surah Al-Baqarah 2:155-156","سورۃ البقرہ 2:155-156"],["2","153","Seek help through patience and prayer. Indeed Allah is with the patient.","صبر اور نماز سے مدد مانگو۔ بے شک اللہ صبر کرنے والوں کے ساتھ ہے۔","Surah Al-Baqarah 2:153","سورۃ البقرہ 2:153"]],
+d:["Inna lillahi wa inna ilayhi raji'un","We belong to Allah and to Him we return.","ہم اللہ ہی کے ہیں اور اسی کی طرف لوٹ کر جانے والے ہیں۔"],
+t:["Crying is not a lack of patience. The Prophet ﷺ wept when his son passed away. Pray for the one you lost, and lean on people who love you.","رونا بے صبری نہیں۔ نبی کریم ﷺ اپنے بیٹے کی وفات پر روئے تھے۔ جانے والے کے لیے دعا کریں اور اپنے پیاروں کا سہارا لیں۔"]},
+{id:"anger",h:["Anger","غصہ"],k:["angry","anger","rage","furious","hate","irritat","غصہ","غصے","نفرت"],
+m:["Anger often hides hurt. Let us slow down together.","غصے کے پیچھے اکثر دکھ چھپا ہوتا ہے۔ آئیے آہستہ ہو جائیں۔"],
+v:[["3","134","Those who restrain their anger and pardon people. Allah loves the doers of good.","جو غصہ پی جاتے ہیں اور لوگوں کو معاف کر دیتے ہیں۔ اللہ نیکی کرنے والوں سے محبت کرتا ہے۔","Surah Al-Imran 3:134","سورۃ آل عمران 3:134"]],
+d:["A'udhu billahi minash-shaytanir-rajeem","I seek refuge in Allah from the cursed Satan.","میں شیطان مردود سے اللہ کی پناہ مانگتا ہوں۔"],
+t:["Pause before you speak, make wudu, and sit down if you are standing.","بولنے سے پہلے رکیں، وضو کریں، اور کھڑے ہوں تو بیٹھ جائیں۔"]},
+{id:"guilt",h:["Guilt and regret","پچھتاوا اور گناہ کا بوجھ"],k:["guilt","sin","regret","ashamed","shame","sorry for","mistake","گناہ","پچھتاوا","شرمندہ","غلطی"],
+m:["Regret shows your heart is alive. The door back is always open.","پچھتاوا اس بات کی علامت ہے کہ آپ کا دل زندہ ہے۔ لوٹنے کا دروازہ ہمیشہ کھلا ہے۔"],
+v:[["39","53","Do not despair of the mercy of Allah. Indeed Allah forgives all sins.","اللہ کی رحمت سے مایوس نہ ہو۔ بے شک اللہ سب گناہ معاف کر دیتا ہے۔","Surah Az-Zumar 39:53","سورۃ الزمر 39:53"]],
+d:["Astaghfirullah","I ask Allah for forgiveness.","میں اللہ سے معافی مانگتا ہوں۔"],
+t:["Make sincere tawbah, put right any harm you caused if you can, and forgive yourself too.","سچی توبہ کریں، ممکن ہو تو جس کا نقصان کیا اس کی تلافی کریں، اور خود کو بھی معاف کریں۔"]}];
+const CR=["suicid","kill myself","end my life","want to die","harm myself","self harm","self-harm","better off dead","خودکشی","مر جانا","مرجانا","جان دے","اپنی جان","زندگی ختم"];
+let lang="en",text="",pick=null,res=null,cnt=0,msg="";
+const HU={stress:[24,"🌿"],anxiety:[205,"🌊"],sad:[255,"🌙"],lonely:[330,"🤝"],grief:[190,"🕊️"],anger:[4,"🔥"],guilt:[140,"🌱"]};
+let geo={lat:30.1575,lng:71.5249,my:false};
+const R=Math.PI/180,sn=x=>Math.sin(x*R),cs=x=>Math.cos(x*R),acs=x=>Math.acos(x)/R,fx=(a,b)=>a-b*Math.floor(a/b);
+function prayerTimes(d){
+ const tz=-d.getTimezoneOffset()/60;
+ const jd=Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5+2440587.5-geo.lng/360;
+ const D=jd+0.5-2451545,g=fx(357.529+0.98560028*D,360),q=fx(280.459+0.98564736*D,360),
+ Lg=fx(q+1.915*sn(g)+0.02*sn(2*g),360),e=23.439-3.6e-7*D,
+ RA=fx(Math.atan2(cs(e)*sn(Lg),cs(Lg))/R,360)/15,
+ dec=Math.asin(sn(e)*sn(Lg))/R;
+ let eq=q/15-RA;if(eq>12)eq-=24;if(eq<-12)eq+=24;
+ const noon=12+tz-geo.lng/15-eq;
+ const h=a=>acs((-sn(a)-sn(dec)*sn(geo.lat))/(cs(dec)*cs(geo.lat)))/15;
+ const as=-(Math.atan(1/(2+Math.tan(Math.abs(geo.lat-dec)*R)))/R);
+ return [noon-h(18),noon-h(.833),noon+0.0167,noon+h(as),noon+h(.833),noon+h(18)];
+}
+function ft(t){t=fx(t,24);let H=Math.floor(t),M=Math.round((t-H)*60);if(M===60){H++;M=0}H%=24;return (H%12||12)+":"+String(M).padStart(2,"0")+" "+(H>=12?"PM":"AM")}
+function prayerHTML(l,ur){
+ const now=new Date(),pt=prayerTimes(now),nh=now.getHours()+now.getMinutes()/60;
+ let ni=[0,2,3,4,5].find(k=>pt[k]>nh);if(ni===undefined)ni=0;
+ return `<div class="pray ${ur?"ur":""}"><h2>🕌 ${l.pt}</h2><p class="nx">${l.nx}: <b>${l.pn[ni]}</b> <span dir="ltr">${ft(pt[ni])}</span> · ${geo.my?l.myl:l.lc}</p><div class="pg" dir="ltr">${pt.map((t,k)=>`<div class="${k===ni?"on":""}"><b>${l.pn[k]}</b><span>${ft(t)}</span></div>`).join("")}</div><p class="note">${l.pnote}</p><button class="small" id="loc">${l.loc}</button></div>`;
+}
+function analyze(){
+ const q=text.toLowerCase();let best=null,sc=0;
+ if(pick)best=T.find(t=>t.id===pick);
+ else{T.forEach(t=>{const s=t.k.filter(k=>q.includes(k)).length;if(s>sc){sc=s;best=t}})}
+ const crisis=CR.some(k=>q.includes(k));
+ if(!best&&!crisis){msg=L[lang].none;res=null;return}
+ if(!best&&crisis)best=T.find(t=>t.id==="sad");
+ msg="";res={t:best,crisis};
+}
+function render(){
+ const i=lang==="en"?0:1,l=L[lang],ur=lang==="ur";
+ const app=document.getElementById("app");
+ app.className=lang;app.dir=ur?"rtl":"ltr";document.documentElement.lang=lang;
+ let h=`<div class="top ${ur?"ur":""}"><h1>${l.title}</h1><div class="seg" dir="ltr"><button class="${!ur?"on":""}" data-l="en">English</button><button class="${ur?"on":""}" data-l="ur">اردو</button></div></div>
+ <p class="sub ${ur?"ur":""}">${l.sub}</p>
+ ${prayerHTML(l,ur)}
+ <textarea id="tx" class="${ur?"ur":""}" placeholder="${l.ph}" aria-label="${l.ph}">${text.replace(/</g,"&lt;")}</textarea>
+ <p class="priv ${ur?"ur":""}">${l.priv}</p>
+ <p class="lbl ${ur?"ur":""}">${l.topics}</p>
+ <div class="chips ${ur?"ur":""}">${T.map(t=>`<button class="chip ${pick===t.id?"on":""}" data-p="${t.id}" style="--h:${HU[t.id][0]}">${HU[t.id][1]} ${t.h[i]}</button>`).join("")}</div>
+ <button class="go ${ur?"ur":""}" id="go" style="line-height:1.6">${l.btn}</button>
+ <p class="${ur?"ur":""}" role="alert" style="color:var(--gold);font-weight:700;margin-top:8px">${msg}</p>`;
+ if(res){
+  const t=res.t,[hu,em]=HU[t.id];
+  if(res.crisis)h+=`<div class="crisis ${ur?"ur":""}" role="alert">${l.crisis}</div>`;
+  h+=`<div class="card t ${ur?"ur":""}" style="--h:${hu}"><h2>${em} ${t.h[i]}</h2><p>${t.m[i]}</p>
+  ${t.v.map(v=>`<div class="verse"><b>${v[4+i]}</b><p>${v[2+i]}</p><a href="https://quran.com/${v[0]}/${v[1]}" target="_blank" rel="noopener noreferrer">${l.read}</a></div>`).join("")}
+  <p class="lbl">${l.dua}</p><div class="dua"><p class="tr" dir="ltr" style="text-align:${ur?"right":"left"}">${t.d[0]}</p><p>${t.d[i+1]}</p></div>
+  <p class="lbl">${l.tip}</p><p>${t.t[i]}</p></div>`;
+ }
+ h+=`<div class="card ${ur?"ur":""}"><h2>${l.dh}</h2><p>${l.dhs}</p><div class="cnt"><button class="big" id="dh" aria-label="${l.dh}">${cnt}</button><button class="small" id="rs">${l.reset}</button></div></div>
+ <p class="foot ${ur?"ur":""}">${l.foot}</p>
+ <div class="par ${ur?"ur":""}"><p>${l.par1}</p><b>${l.par2}</b><p>${l.par3}</p></div>`;
+ app.innerHTML=h;
+ app.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>{text=document.getElementById("tx").value;lang=b.dataset.l;render()});
+ app.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{text=document.getElementById("tx").value;pick=pick===b.dataset.p?null:b.dataset.p;render()});
+ document.getElementById("go").onclick=()=>{text=document.getElementById("tx").value;analyze();render();if(res)document.querySelector(".card,.crisis").scrollIntoView({behavior:"smooth",block:"start"})};
+ document.getElementById("dh").onclick=e=>{cnt++;e.target.textContent=cnt};
+ document.getElementById("rs").onclick=()=>{cnt=0;render()};
+ document.getElementById("loc").onclick=()=>{if(!navigator.geolocation){msg=l.nl;render();return}navigator.geolocation.getCurrentPosition(p=>{text=document.getElementById("tx").value;geo={lat:p.coords.latitude,lng:p.coords.longitude,my:true};render()},()=>{text=document.getElementById("tx").value;msg=l.nl;render()},{timeout:8000})};
+}
+render();
+</script>
+</body>
+</html>
